@@ -41,11 +41,16 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
                     name.innerText = currentPokemon.name
                     id.innerText = currentPokemon.id
                     let types = currentPokemon.types
+                    let typeValue = '';
                     types.map((typePokemon, index) => {
                         let span = document.createElement('span')
                         if (typePokemon.slot == 1) {
                             div.className = 'card ' + typePokemon.type.name
+                            typeValue = typeValue + typePokemon.type.name
+                        }else{
+                            typeValue += ' ,' + typePokemon.type.name
                         }
+                        
                         span.innerText = typePokemon.type.name
                         type.append(span)
                         type.append(document.createElement('br'))
@@ -55,10 +60,11 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
                     div.append(id)
                     div.append(type)
                     div.addEventListener('click', (e) => {
-                        console.log(currentPokemon.weight)
+                        document.getElementsByClassName('pokename').innerText = currentPokemon.name
                         document.getElementById('front').src = currentPokemon.sprites.front_default
                         document.getElementById('back').src = currentPokemon.sprites.back_default
-                        document.getElementById('poketype').value = currentPokemon.typePokemon.types
+                        document.getElementById('pokeid').value = currentPokemon.id
+                        document.getElementById('poketype').value = typeValue
                         document.getElementById('pokeweight').value = currentPokemon.weight
                         document.getElementById('pokeheight').value = currentPokemon.height
                     })
