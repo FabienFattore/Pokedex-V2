@@ -54,6 +54,16 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
                         type.append(span)
                         type.append(document.createElement('br'))
                     })
+                    let abilities = currentPokemon.abilities
+                    let abilityValue = ''
+                    abilities.map((abilityPokemon, index) => {
+                        if (abilityPokemon.slot == 1) {
+                            abilityValue = abilityValue + abilityPokemon.ability.name
+                        }else{
+                            abilityValue = abilityValue + ' ,' + abilityPokemon.ability.name
+                        }
+                        console.log(abilityPokemon)
+                    })
                     div.append(name)
                     div.append(image)
                     div.append(id)
@@ -66,7 +76,7 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
                         document.getElementById('poketype').value = 'Types : ' + typeValue
                         document.getElementById('pokeweight').value = 'Poids : ' + currentPokemon.weight + 'Kg'
                         document.getElementById('pokeheight').value = 'Taille : ' + currentPokemon.height + '0cm'
-                        document.getElementById('abilities').value = 'Talents : ' + abilitieValue
+                        document.getElementById('abilities').value = 'Capacités : ' + abilityValue
 
                     })
                     pokemons.append(div)
