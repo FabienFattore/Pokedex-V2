@@ -20,7 +20,7 @@ function filtrerPokemon() {
         } else {
             pokemon.style.display = 'none'
         }
-    });
+    })
 }
 
 fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
@@ -87,12 +87,14 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
 fetch('https://pokeapi.co/api/v2/type')
     .then(response => response.json())
     .then(data => {
-        resu = data.results
-        console.log(resu)
-        let searchbytype = document.createElement('option')
-        document.getElementById('searchbytype').append(searchbytype)
-    })
+        const types = data.results;
 
+        types.forEach(type => {
+            let option = document.createElement('option');
+            option.text = type.name;
+            document.getElementById('searchbytype').appendChild(option);
+        })
+    })
 
 
 
