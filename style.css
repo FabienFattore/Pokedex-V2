@@ -170,8 +170,15 @@ header h1 {
     position: fixed;
     right: 25px;
     border-radius: 15px;
+    border: solid 10px rgb(202, 224, 217);
 }
 
+#pokename {
+    font-size: 3em;
+    font-family: 'Pokemon Solid', sans-serif;
+    letter-spacing: 4px;
+    margin: 0;
+}
 .pictures {
     display: flex;
     flex-direction: row;
@@ -206,5 +213,13 @@ header h1 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.description input {
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    color: black;
+    background-color: rgb(202, 224, 217);
 }
 

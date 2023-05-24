@@ -41,7 +41,7 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
                     name.innerText = currentPokemon.name
                     id.innerText = currentPokemon.id
                     let types = currentPokemon.types
-                    let typeValue = '';
+                    let typeValue = ''
                     types.map((typePokemon, index) => {
                         let span = document.createElement('span')
                         if (typePokemon.slot == 1) {
@@ -49,8 +49,7 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
                             typeValue = typeValue + typePokemon.type.name
                         }else{
                             typeValue += ' ,' + typePokemon.type.name
-                        }
-                        
+                        }      
                         span.innerText = typePokemon.type.name
                         type.append(span)
                         type.append(document.createElement('br'))
@@ -60,13 +59,15 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
                     div.append(id)
                     div.append(type)
                     div.addEventListener('click', (e) => {
-                        document.getElementsByClassName('pokename').innerText = currentPokemon.name
+                        document.getElementById('pokename').innerText = currentPokemon.name
                         document.getElementById('front').src = currentPokemon.sprites.front_default
                         document.getElementById('back').src = currentPokemon.sprites.back_default
-                        document.getElementById('pokeid').value = currentPokemon.id
-                        document.getElementById('poketype').value = typeValue
-                        document.getElementById('pokeweight').value = currentPokemon.weight
-                        document.getElementById('pokeheight').value = currentPokemon.height
+                        document.getElementById('pokeid').value = '#ID : ' + currentPokemon.id
+                        document.getElementById('poketype').value = 'Types : ' + typeValue
+                        document.getElementById('pokeweight').value = 'Poids : ' + currentPokemon.weight + 'Kg'
+                        document.getElementById('pokeheight').value = 'Taille : ' + currentPokemon.height + '0cm'
+                        document.getElementById('abilities').value = 'Talents : ' + abilitieValue
+
                     })
                     pokemons.append(div)
                     
