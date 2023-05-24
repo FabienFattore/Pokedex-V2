@@ -26,8 +26,8 @@ function filtrerPokemon() {
 fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
     .then(response => response.json())
     .then(data => {
-        const result = data.results;
-        console.log(result);
+        const result = data.results
+        console.log(result)
         result.forEach((pokemon, index) => {
             fetch(pokemon.url)
                 .then(res => res.json())
@@ -47,9 +47,9 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
                         if (typePokemon.slot == 1) {
                             div.className = 'card ' + typePokemon.type.name
                             typeValue = typeValue + typePokemon.type.name
-                        }else{
+                        } else {
                             typeValue += ' ,' + typePokemon.type.name
-                        }      
+                        }
                         span.innerText = typePokemon.type.name
                         type.append(span)
                         type.append(document.createElement('br'))
@@ -59,10 +59,9 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
                     abilities.map((abilityPokemon, index) => {
                         if (abilityPokemon.slot == 1) {
                             abilityValue = abilityValue + abilityPokemon.ability.name
-                        }else{
+                        } else {
                             abilityValue = abilityValue + ' ,' + abilityPokemon.ability.name
                         }
-                        console.log(abilityPokemon)
                     })
                     div.append(name)
                     div.append(image)
@@ -78,12 +77,20 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
                         document.getElementById('pokeheight').value = 'Taille : ' + currentPokemon.height + '0cm'
                         document.getElementById('abilities').value = 'Capacités : ' + abilityValue
 
+
                     })
                     pokemons.append(div)
-                    
-                    
                 })
         })
+    })
+
+fetch('https://pokeapi.co/api/v2/type')
+    .then(response => response.json())
+    .then(data => {
+        resu = data.results
+        console.log(resu)
+        let searchbytype = document.createElement('option')
+        document.getElementById('searchbytype').append(searchbytype)
     })
 
 

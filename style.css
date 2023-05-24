@@ -1,3 +1,9 @@
+:root {
+    --input-color: rgb(222, 228, 226);
+    --text-color : rgb(48, 46, 46);
+    --background-1 : rgb(121, 116, 116);
+}
+
 body {
     width: 100%;
     height: 100vh;
@@ -19,7 +25,7 @@ header {
 header h1 {
     margin: 0 1% 5.5% 2%;
     font-family: 'Pokemon Solid', sans-serif;
-    color: rgb(48, 46, 46);
+    color: var(--text-color);
     letter-spacing: 2px;
 }
 
@@ -30,11 +36,23 @@ header img {
     top: 880px;
 }
 
+header select {
+    background-color: var(--input-color);
+    position: fixed;
+    border: none;
+    right: 440px;
+    width: 150px;
+    height: 27px;
+}
+
 #search {
+    border: none;
+    background-color: var(--input-color);
     border-radius: 5%;
     margin: 0 0 0 1%;
     width: 150px;
     height: 25px;
+    color: var(--text-color);
 }
 
 #pokemons {
@@ -43,6 +61,7 @@ header img {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    color: var(--text-color);
 }
 
 .container {
@@ -58,10 +77,10 @@ header img {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: solid 3px rgb(202, 224, 217);
-    background-color: rgb(100, 166, 224);
+    border: solid 3px var(--input-color);
     border-radius: 10px;
-    box-shadow: 10px 10px 15px gray;
+    box-shadow: 10px 10px 15px var(--background-1);
+    background-color: #b1adab;
     transform: rotateX(15deg) rotateY(15deg);
     perspective: 1000px;
 }
@@ -73,12 +92,12 @@ header img {
 .card > img {
     width: 110px;
     border-radius: 50%;
-    background-color: rgb(202, 224, 217);
+    -webkit-box-reflect: inherit;
 }
 
 .card h2 {
     font-size: 1.6em;
-    background-color: rgb(202, 224, 217);
+    background-color: var(--input-color);
     border-radius: 10px;
     padding: 3px 5px 3px 5px;
 }
@@ -87,7 +106,7 @@ header img {
     text-align: center;
     align-items: center;
     font-size: 1em;
-    background-color: rgb(202, 224, 217);
+    background-color: var(--input-color);
     border-radius: 3px;
     padding: 3px;
     margin-top: 5%;
@@ -95,77 +114,98 @@ header img {
 }
 
 .electric {
-    background-color: #FFEA70;
+    background: rgb(241,236,207);
+    background: radial-gradient(circle, rgba(241,236,207,1) 22%, rgba(247,238,87,1) 46%, rgba(255,250,18,1) 76%);
 }
 
 .normal {
-    background-color: #B09398;
+    background: rgb(254,227,232);
+    background: radial-gradient(circle, rgba(254,227,232,1) 22%, rgba(212,155,165,1) 46%, rgba(163,132,137,1) 76%);
 }
 
 .fire {
-    background-color: #FF675C;
+    background: rgb(254,228,226);
+    background: radial-gradient(circle, rgba(254,228,226,1) 22%, rgba(255,127,117,1) 46%, rgba(248,56,42,1) 76%);
 }
 
 .water {
-    background-color: #0596C7;
+    background: rgb(236,250,255);
+    background: radial-gradient(circle, rgba(236,250,255,1) 22%, rgba(99,215,255,1) 46%, rgba(5,150,199,1) 76%);
 }
 
 .ice {
-    background-color: #AFEAFD;
+    background: rgb(241,248,250);
+    background: radial-gradient(circle, rgba(241,248,250,1) 22%, rgba(107,217,252,1) 46%, rgba(0,191,252,1) 76%);
 }
 
 .rock {
-    background-color: #999799;
+    background: rgb(251,251,251);
+    background: radial-gradient(circle, rgba(251,251,251,1) 22%, rgba(163,163,163,1) 46%, rgba(111,111,111,1) 76%);
 }
 
 .flying {
-    background-color: #7AE7C7;
+    background: rgb(250,252,252);
+    background: radial-gradient(circle, rgba(250,252,252,1) 22%, rgba(126,254,216,1) 46%, rgba(14,210,153,1) 76%);
 }
 
 .grass {
-    background-color: #4A9681;
+    background: rgb(249,251,251);
+    background: radial-gradient(circle, rgba(249,251,251,1) 22%, rgba(146,207,190,1) 46%, rgba(72,153,131,1) 76%);
 }
 
 .psychic {
-    background-color: #FFC6D9;
+    background: rgb(251,251,251);
+    background: radial-gradient(circle, rgba(251,251,251,1) 22%, rgba(252,221,232,1) 46%, rgba(255,181,206,1) 76%);
 }
 
 .ghost {
-    background-color: #561D25;
+    background: rgb(244,237,238);
+    background: radial-gradient(circle, rgba(244,237,238,1) 22%, rgba(156,99,107,1) 46%, rgba(86,29,37,1) 76%);
 }
 
 .bug {
-    background-color: #A2FAA3;
+    background: rgb(250,250,250);
+    background: radial-gradient(circle, rgba(250,250,250,1) 22%, rgba(208,254,209,1) 46%, rgba(132,252,134,1) 76%);
 }
 
 .poison {
-    background-color: #795663;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 22%, rgba(194,162,174,1) 46%, rgba(98,66,78,1) 76%);
 }
 
 .ground {
-    background-color: #D2B074;
+    background: rgb(251,250,249);
+    background: radial-gradient(circle, rgba(251,250,249,1) 22%, rgba(232,213,181,1) 46%, rgba(208,172,109,1) 76%);
 }
 
 .dragon {
-    background-color: #DA627D;
+    background: rgb(249,246,246);
+    background: radial-gradient(circle, rgba(249,246,246,1) 22%, rgba(242,176,191,1) 46%, rgba(218,98,125,1) 76%);
 }
 
 .steel {
-    background-color: #1D8A99;
+    background: rgb(247,251,251);
+    background: radial-gradient(circle, rgba(247,251,251,1) 22%, rgba(109,181,191,1) 46%, rgba(29,138,153,1) 76%);
 }
 
-.fughting {
-    background-color: #2F2F2F;
+.fighting {
+    background: rgb(245,243,243);
+    background: radial-gradient(circle, rgba(245,243,243,1) 22%, rgba(149,149,149,1) 46%, rgba(47,47,47,1) 76%);
 }
 
 .default {
-    background-color: #2A1A1F;
+    background: rgb(246,242,243);
+    background: radial-gradient(circle, rgba(246,242,243,1) 22%, rgba(140,112,121,1) 46%, rgba(42,26,31,1) 76%);
+}
+.fairy {
+    background: rgb(255,23,232);
+    background: linear-gradient(90deg, rgba(255,23,232,1) 0%, rgba(114,199,255,1) 50%, rgba(69,252,85,1) 100%);
 }
 
 .stats {
     display: flex;
     flex-direction: column;
-    background-color: gray;
+    background-color: rgb(121, 116, 116);
     width: 100px;
     height: 100px;
 }
@@ -182,7 +222,7 @@ header img {
     position: fixed;
     right: 25px;
     border-radius: 15px;
-    border: solid 10px rgb(202, 224, 217);
+    border: solid 10px var(--input-color);
 }
 
 #pokename {
@@ -231,8 +271,8 @@ header img {
     border-radius: 5px;
     border: none;
     padding: 5px;
-    color: black;
-    background-color: rgb(202, 224, 217);
+    color: var(--text-color);
+    background-color: var(--input-color);
 }
 
 #abilities {
