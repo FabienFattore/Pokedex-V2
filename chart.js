@@ -8,7 +8,9 @@ new Chart(ctx, {
         datasets: [{
             label: 'Pokestats',
             data: [],
-            borderWidth: 2
+            borderWidth: 1,
+            backgroundColor: '#868181',
+            borderColor: '#181818',
         }]
     },
     options: {
