@@ -12,6 +12,8 @@ body {
     margin: 0;
 }
 
+/* menu recherche */
+
 header {
     display: flex;
     flex-direction: row;
@@ -20,7 +22,10 @@ header {
     right: 615px;
     top: 850px;
     z-index: 2;
+    margin-top: 1%;
 }
+
+/* titre */
 
 header h1 {
     margin: 0 1% 5.5% 2%;
@@ -29,12 +34,28 @@ header h1 {
     letter-spacing: 2px;
 }
 
+/* pokeball */
+
 header img {
     width: 45px;
     position: fixed;
     right: 40px;
     top: 880px;
 }
+
+/* barre de recherche */
+
+#search {
+    border: none;
+    background-color: var(--input-color);
+    border-radius: 5%;
+    margin: 0 0 0 1%;
+    width: 150px;
+    height: 25px;
+    color: var(--text-color);
+}
+
+/* selecteur */
 
 header select {
     background-color: var(--input-color);
@@ -50,15 +71,7 @@ header select {
     background-color: var(--background-1);
 }
 
-#search {
-    border: none;
-    background-color: var(--input-color);
-    border-radius: 5%;
-    margin: 0 0 0 1%;
-    width: 150px;
-    height: 25px;
-    color: var(--text-color);
-}
+/* partie fixe */
 
 #pokemons {
     width: 50%;
@@ -75,6 +88,9 @@ header select {
     flex-direction: row;
     width: 100%;
 }
+
+/* cartes pokemons */
+
 .card {
     margin: 1%;
     width: 200px;
@@ -117,6 +133,8 @@ header select {
     margin-top: 5%;
     margin-bottom: 5%;
 }
+
+/*couleurs fond de cartes */
 
 .electric {
     background: rgb(241,236,207);
@@ -207,6 +225,8 @@ header select {
     background: linear-gradient(90deg, rgba(255,23,232,1) 0%, rgba(114,199,255,1) 50%, rgba(69,252,85,1) 100%);
 }
 
+/*stats de base */
+
 .stats {
     display: flex;
     flex-direction: column;
@@ -221,7 +241,7 @@ header select {
     justify-content: space-around;
     align-items: center;
     width: 46%;
-    height: 750px;
+    height: 840px;
     margin: 1% 0 0% 3%;
     opacity: 0.9;
     position: fixed;
@@ -229,6 +249,7 @@ header select {
     border-radius: 15px;
     border: solid 10px var(--input-color);
 }
+/* affichage nom et images pokemon selectionné */
 
 #pokename {
     font-size: 3em;
@@ -246,6 +267,8 @@ header select {
     width: 250px;
 }
 
+/* stats partie gauche */
+
 .description {
     width: 100%;
     height: 50%;
@@ -255,13 +278,19 @@ header select {
 }
 
 .stats-left {
-    width: 50%;
-    height: 100%;
+    width: 40%;
+    height: 95%;
+    margin-left: 50px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border: solid 3px var(--input-color);
+    
 }
+
+/* stats partie droite */
 
 .stats-right {
     width: 50%;
@@ -282,4 +311,16 @@ header select {
 
 #abilities {
     width: 300px;
+}
+
+/* graphique stats pokemon selectionné */
+
+.graph {
+    display: flex;
+    align-items: center;
+    width: 340px;
+    border-radius: 10px;
+    background-color: var(--input-color);
+    margin: 1%;
+    
 }
