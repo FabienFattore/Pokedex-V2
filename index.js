@@ -23,6 +23,10 @@ function filtrerPokemon() {
     })
 }
 
+function filtrerPokemonType() {
+    
+}
+
 fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
     .then(response => response.json())
     .then(data => {
@@ -76,8 +80,6 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
                         document.getElementById('pokeweight').value = 'Poids : ' + currentPokemon.weight + 'Kg'
                         document.getElementById('pokeheight').value = 'Taille : ' + currentPokemon.height + '0cm'
                         document.getElementById('abilities').value = 'Capacités : ' + abilityValue
-
-
                     })
                     pokemons.append(div)
                 })
