@@ -2,6 +2,7 @@
     --input-color: rgb(222, 228, 226);
     --text-color : rgb(48, 46, 46);
     --background-1 : rgb(121, 116, 116);
+    --card-border : #ffe067;
 }
 
 body {
@@ -98,7 +99,7 @@ header select {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: solid 3px var(--input-color);
+    border: solid 6px var(--card-border);
     border-radius: 10px;
     box-shadow: 10px 10px 15px var(--background-1);
     background-color: #b1adab;
@@ -111,8 +112,10 @@ header select {
 }
 
 .card > img {
-    width: 110px;
-    border-radius: 50%;
+    width: 150px;
+    border-radius: 5px;
+    border: solid 3px var(--card-border);
+    background-image: url(mont-verdoyant.jpg);
     -webkit-box-reflect: inherit;
 }
 
@@ -124,6 +127,7 @@ header select {
 }
 
 .card h3 {
+    width: 50px;
     text-align: center;
     align-items: center;
     font-size: 1em;
@@ -249,6 +253,7 @@ header select {
     border-radius: 15px;
     border: solid 10px var(--input-color);
 }
+
 /* affichage nom et images pokemon selectionné */
 
 #pokename {
