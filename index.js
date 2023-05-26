@@ -4,6 +4,7 @@ const resultat = document.querySelector('ul')
 const pokemonCard = document.querySelector('card')
 let search = ''
 input.addEventListener('input', trouverPokemon)
+const btn = document.getElementsByClassName('btn-top')
 
 function trouverPokemon() {
     search = this.value

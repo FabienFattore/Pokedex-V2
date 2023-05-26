@@ -2,7 +2,8 @@
     --input-color: rgb(222, 228, 226);
     --text-color : rgb(48, 46, 46);
     --background-1 : rgb(121, 116, 116);
-    --card-border : #ffe067;
+    --card-border : #fadc31;
+    --title-blue : #1b257b;
 }
 
 body {
@@ -31,17 +32,23 @@ header {
 header h1 {
     margin: 0 1% 5.5% 2%;
     font-family: 'Pokemon Solid', sans-serif;
-    color: var(--text-color);
-    letter-spacing: 2px;
+    color: var(--title-blue);
+    letter-spacing: 3px;
+    -webkit-text-stroke: var(--card-border) 1px;
 }
 
 /* pokeball */
 
-header img {
+.icone {
     width: 45px;
     position: fixed;
     right: 40px;
-    top: 880px;
+    top: 900px;
+}
+
+.btn-top {
+    cursor: pointer;
+    scroll-behavior: smooth;
 }
 
 /* barre de recherche */
@@ -90,6 +97,7 @@ header select {
     width: 100%;
 }
 
+
 /* cartes pokemons */
 
 .card {
@@ -102,7 +110,7 @@ header select {
     border: solid 6px var(--card-border);
     border-radius: 10px;
     box-shadow: 10px 10px 15px var(--background-1);
-    background-color: #b1adab;
+    background-color: #b1adab; 
     transform: rotateX(15deg) rotateY(15deg);
     perspective: 1000px;
 }
@@ -113,29 +121,34 @@ header select {
 
 .card > img {
     width: 150px;
-    border-radius: 5px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 5px var(--text-color);
     border: solid 3px var(--card-border);
     background-image: url(mont-verdoyant.jpg);
     -webkit-box-reflect: inherit;
 }
 
 .card h2 {
+    width: 90%;
+    padding:  2px 2px 2px 2px;
+    align-items: center;
+    text-align: center;
     font-size: 1.6em;
     background-color: var(--input-color);
-    border-radius: 10px;
-    padding: 3px 5px 3px 5px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 5px var(--text-color);
 }
 
 .card h3 {
-    width: 50px;
+    padding:  2px 2px 2px 2px;
+    width: 90%;
+    height: 30%;
     text-align: center;
     align-items: center;
     font-size: 1em;
     background-color: var(--input-color);
     border-radius: 3px;
-    padding: 3px;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    box-shadow: 1px 1px 5px var(--text-color);
 }
 
 /*couleurs fond de cartes */
@@ -234,9 +247,10 @@ header select {
 .stats {
     display: flex;
     flex-direction: column;
-    background-color: rgb(121, 116, 116);
+    background-color: var(--title-blue);
     width: 100px;
     height: 100px;
+    box-shadow: 1px 1px 5px var(--text-color);
 }
 
 .stats {
@@ -251,7 +265,7 @@ header select {
     position: fixed;
     right: 25px;
     border-radius: 15px;
-    border: solid 10px var(--input-color);
+    border: solid 10px var(--card-border);
 }
 
 /* affichage nom et images pokemon selectionné */
@@ -291,7 +305,9 @@ header select {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: solid 3px var(--input-color);
+    background-color: var(--background-1);
+    border: solid 3px var(--card-border);
+    box-shadow: 1px 1px 5px black;
     
 }
 
@@ -315,7 +331,7 @@ header select {
 }
 
 #abilities {
-    width: 300px;
+    width: 330px;
 }
 
 /* graphique stats pokemon selectionné */
