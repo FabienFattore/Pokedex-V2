@@ -61,6 +61,7 @@ header h1 {
     width: 150px;
     height: 25px;
     color: var(--text-color);
+    box-shadow: 1px 1px 5px var(--text-color);
 }
 
 /* selecteur */
@@ -73,6 +74,7 @@ header select {
     right: 440px;
     width: 150px;
     height: 27px;
+    box-shadow: 1px 1px 5px var(--text-color);
 }
 
 #searchbytype:hover {
@@ -113,10 +115,11 @@ header select {
     background-color: #b1adab; 
     transform: rotateX(15deg) rotateY(15deg);
     perspective: 1000px;
+    transition: all .3s; 
 }
 
 .card:hover {
-    transform: rotateX(0deg) rotateY(0deg);   
+    transform: rotateX(0deg) rotateY(0deg);      
 }
 
 .card > img {
@@ -142,7 +145,6 @@ header select {
 .card h3 {
     padding:  2px 2px 2px 2px;
     width: 90%;
-    height: 30%;
     text-align: center;
     align-items: center;
     font-size: 1em;

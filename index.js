@@ -12,6 +12,8 @@ function trouverPokemon() {
     filtrerPokemon()
 }
 
+// recherche des pokemons par nom ou id
+
 function filtrerPokemon() {
     Array.from(pokemons.children).forEach(pokemon => {
         const id = pokemon.querySelector('h3').innerText
@@ -23,6 +25,22 @@ function filtrerPokemon() {
         }
     })
 }
+
+// affichage par ordre des id
+
+function trierParId() {
+    const pokemonList = Array.from(pokemons.children);
+    pokemonList.sort((a, b) => {
+        const idA = parseInt(a.querySelector('h3').innerText);
+        const idB = parseInt(b.querySelector('h3').innerText);
+        return idA - idB;
+    })
+    pokemonList.forEach(pokemon => {
+        pokemons.appendChild(pokemon)
+    })
+}
+
+// appel de l'api pour les 151 pokemons
 
 fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
     .then(response => response.json())
@@ -77,13 +95,14 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
                         document.getElementById('pokeweight').value = 'Poids : ' + currentPokemon.weight + 'Kg'
                         document.getElementById('pokeheight').value = 'Taille : ' + currentPokemon.height + '0cm'
                         document.getElementById('abilities').value = 'Capacités : ' + abilityValue
-                         drawChart(currentPokemon)
+                        drawChart(currentPokemon)
                     })
-                    pokemons.append(div)
-                   
+                    pokemons.append(div);
                 })
         })
     })
+
+// appel de l'api pour les types de pokemons
 
 fetch('https://pokeapi.co/api/v2/type')
     .then(response => response.json())
