@@ -40,7 +40,7 @@ function trierParId() {
     })
 }
 
-// appel de l'api pour les 151 pokemons
+// Appel de l'api pour les 151 pokemons
 
 fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
     .then(response => response.json())
@@ -102,7 +102,7 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
         })
     })
 
-// appel de l'api pour les types de pokemons
+// Appel de l'api pour les types de pokemons
 
 fetch('https://pokeapi.co/api/v2/type')
     .then(response => response.json())
@@ -110,13 +110,49 @@ fetch('https://pokeapi.co/api/v2/type')
         const types = data.results;
 
         types.forEach(type => {
-            let option = document.createElement('option');
+            let option = document.createElement('option')
             option.text = type.name;
-            document.getElementById('searchbytype').appendChild(option);
+            document.getElementById('searchbytype').appendChild(option)
         })
     })
 
+// Recuperation des cookies
 
+document.getElementById('trainerForm').addEventListener('submit', function(event) {
+    event.preventDefault()
+  
+// Recuperation des valeur du dresseur
+
+    const name = document.getElementById('name').value
+    const age = document.getElementById('age').value
+  
+// Création du dresseur
+
+    const trainer = { name, age }
+  
+// Stockage du dresseur dans les cookies
+
+    Cookies.set('trainer', JSON.stringify(trainer))
+  
+// Message de confirmation
+
+    alert('Dresseur créé avec succès !')
+
+// Reset formaulaire
+
+    document.getElementById('trainerForm').reset()
+  });
+  
+  const trainerData = Cookies.get('trainer')
+
+if (trainerData) {
+  const trainer = JSON.parse(trainerData)
+
+  // Affichage dans la console
+
+  console.log('Nom du dresseur :', trainer.name)
+  console.log('Âge du dresseur :', trainer.age)
+}
 
 
 

@@ -112,7 +112,7 @@ header select {
     border: solid 6px var(--card-border);
     border-radius: 10px;
     box-shadow: 10px 10px 15px var(--background-1);
-    background-color: #b1adab; 
+    background-color: var(--background-1); 
     transform: rotateX(15deg) rotateY(15deg);
     perspective: 1000px;
     transition: all .3s; 
@@ -286,6 +286,19 @@ header select {
 
 .pictures > img {
     width: 250px;
+}
+
+#trainerForm {
+    color: var(--input-color);
+    position: fixed;
+    right: 42px;
+    top : 35px;
+    z-index: 1;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    color: var(--text-color);
+    background-color: var(--input-color);
 }
 
 /* stats partie gauche */
