@@ -115,6 +115,14 @@ fetch('https://pokeapi.co/api/v2/type')
             document.getElementById('searchbytype').appendChild(option)
         })
     })
+    .then(() => {
+        // Ajoute l'événement de clic pour le bouton de tri
+        const select = document.getElementById('searchbytype')
+        select.addEventListener('change', trierParType)
+        const btn = document.querySelector('option')
+        btn.addEventListener('click', trierParId)
+        
+    })
 
 // Recuperation des cookies
 
@@ -124,11 +132,10 @@ document.getElementById('trainerForm').addEventListener('submit', function(event
 // Recuperation des valeur du dresseur
 
     const name = document.getElementById('name').value
-    const age = document.getElementById('age').value
-  
+
 // Création du dresseur
 
-    const trainer = { name, age }
+    const trainer = { name }
   
 // Stockage du dresseur dans les cookies
 
@@ -138,7 +145,7 @@ document.getElementById('trainerForm').addEventListener('submit', function(event
 
     alert('Dresseur créé avec succès !')
 
-// Reset formaulaire
+// Reset formulaire
 
     document.getElementById('trainerForm').reset()
   });
@@ -147,11 +154,6 @@ document.getElementById('trainerForm').addEventListener('submit', function(event
 
 if (trainerData) {
   const trainer = JSON.parse(trainerData)
-
-  // Affichage dans la console
-
-  console.log('Nom du dresseur :', trainer.name)
-  console.log('Âge du dresseur :', trainer.age)
 }
 
 

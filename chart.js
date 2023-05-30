@@ -10,7 +10,7 @@ new Chart(ctx, {
             data: [],
             borderWidth: 1,
             backgroundColor: '#868181',
-            borderColor: '#181818',
+            borderColor: '#181818',     
         }]
     },
     options: {
